@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/createDeploy/{deployName}/{deployEnv}', 'Misc\DeployController@deploy');
