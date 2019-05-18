@@ -26,9 +26,9 @@ class DeployController extends Controller
         }
 
         $arrGitCommands = [
-            'sudo whoami',
-            'sudo git pull',
-            'sudo git status',
+            'whoami',
+            'git pull',
+            'git status',
 //            'php ../artisan cache:clear',
 //            'php ../artisan route:clear',
 //            'php ../artisan view:clear',
