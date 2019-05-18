@@ -15,4 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::match(['get', 'post'], '/users',[
+    'as'=> 'users',
+    'uses' => 'User\UserController@getUser'
+]);
+
 Route::get('/createDeploy/{deployName}/{deployEnv}', 'Misc\DeployController@deploy');
