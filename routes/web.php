@@ -11,6 +11,24 @@
 |
 */
 
+
+use Illuminate\Support\Facades\Route;
+
+$domain = 'vasilysmolin.ru';
+
+
+Route::group([
+    'domain' => '{sub}.' . $domain,
+    'middleware' => ['web']
+], function () {
+
+    Route::get('/', function () {
+        return view('welcomeCity');
+    });
+
+});
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,3 +39,5 @@ Route::match(['get', 'post'], '/users',[
 ]);
 
 Route::get('/createDeploy/{deployName}/{deployEnv}', 'Misc\DeployController@deploy');
+
+
